@@ -39,7 +39,7 @@ const Standings = () => {
     return team ? team.logoUrl : '';
   };
 
-  // Animate standings when they change
+  // Animation variants
   const staggerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -140,7 +140,7 @@ const Standings = () => {
                   className="contents"
                 >
                   {sortedStandings.map((team, index) => (
-                    <motion.tr
+                    <motion.div
                       key={team.teamId}
                       variants={childVariants}
                       className="contents"
@@ -174,7 +174,7 @@ const Standings = () => {
                         </TableCell>
                         <TableCell className="hidden sm:table-cell">{team.lastTen}</TableCell>
                       </TableRow>
-                    </motion.tr>
+                    </motion.div>
                   ))}
                 </motion.div>
               </TableBody>
